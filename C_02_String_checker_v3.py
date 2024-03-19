@@ -1,6 +1,7 @@
 # Check that users have entered a valid
 # option based on a list
 def string_checker(question, valid_ans=('yes', 'no')):
+
     error = f"Please enter a valid option from the following list: {valid_ans}"
 
     while True:
@@ -22,36 +23,13 @@ def string_checker(question, valid_ans=('yes', 'no')):
         print()
 
 
-# Display Instructions
-def instruction():
-    print('''
-✦✦✦ Instructions ✦✦✦
+# Main routine goes here
 
-To begin, choose the number of rounds (or press <enter> for 
-infinite mode).
+rps_list = ["rock", "paper", "scissors", "xxx"]
 
-Then play against the computer. You need to choose R (rock),
-P (paper) or S (scissors).
+want_instructions = string_checker("Do you want to see the instructions?: ",)
 
-The rules are as follows:
-- Rock beats Scissors
-- Scissors beats Paper
-- Paper beats Rock
+print("You chose: ", want_instructions)
 
-Have Fun!
-    ''')
-
-
-# Main routine
-print()
-print("💎📰✂ Rock / Paper / Scissors Game ✂📰💎")
-print()
-
-# ask user if they want to see the instructions and display them if requested
-want_instructions = string_checker("Do you want to read the instructions?: ")
-
-# checks user enter yes (y) or no (n)
-if want_instructions == "yes":
-    instruction()
-
-print("program continues")
+user_choice = string_checker("Choose: ", rps_list)
+print("You chose: ", user_choice)
