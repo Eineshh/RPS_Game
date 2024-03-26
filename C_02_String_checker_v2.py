@@ -21,15 +21,15 @@ def string_checker(user_response, valid_ans):
 
 # Automated testing is below in the form (test_case, expected_value)
 to_test = [
-    ('Rock', 'rock')
+    ('Rock', 'rock'),
     ('PAPER', 'paper'),
     ('scissors', 'scissors'),
     ('R', 'rock'),
     ('p', 'paper'),
     ('S', 'scissors'),
-    ('XXX', 'exit code'),
-    ('x', 'exit code'),
-    ('random', 'Please enter rock / paper / scissors'),
+    ('XXX', 'xxx'),
+    ('x', 'xxx'),
+    ('random', 'invalid'),
 
 ]
 
@@ -40,7 +40,7 @@ for item in to_test:
     expected = item[1]
 
     # get actual value (ie: test ticket function)
-    actual = string_checker(case, ["yes", "no"])
+    actual = string_checker(case, ["rock","paper", "scissors", "xxx"])
 
     # compare actual and expected and output pass / fail
     if actual == expected:
