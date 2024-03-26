@@ -41,8 +41,6 @@ The rules are as follows:
 - Scissors beats Paper
 - Paper beats Rock
 
-
-
 Have Fun! ''')
 
 
@@ -134,10 +132,11 @@ while rounds_played < num_rounds:
 
     # randomly choose from rps list (excluding the exit code)
     comp_choice = random.choice(rps_list[:-1])
-    print("Computer choice", comp_choice)
+    print("Computer Choice:", comp_choice)
 
     # get user choice
     user_choice = string_checker("Choose: ", rps_list)
+    print()
     print("You chose", user_choice)
 
     if user_choice == "xxx":
@@ -182,19 +181,23 @@ if rounds_played > 0:
     percent_tied = 100 - percent_won - percent_lost
 
     # Output Game statistics
+    print()
     print("🎮🎮 Game Statistics 🎮🎮")
+    print()
     print(f"😻 Won: {percent_won:.2f} \t "
           f"😿 Lost: {percent_lost:.2f} \t"
           f"⭐ Tied: {percent_tied:.2f}")
 
     # ask user if they want to see their game history and output if its requested
     see_history = string_checker("\nDo you want to see your game history?: ")
+    print()
     if see_history == "yes":
         for item in game_history:
             print(item)
 
     print()
-    print("Thanks for playing.")
+    print("Thank you for playing! :)")
 
 else:
+    print()
     print("😲😲 Oops - You chickened out! 😲😲")

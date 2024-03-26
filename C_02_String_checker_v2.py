@@ -1,4 +1,3 @@
-
 # Check that users have entered a valid
 # option based on a list
 def string_checker(user_response, valid_ans):
@@ -40,7 +39,7 @@ for item in to_test:
     expected = item[1]
 
     # get actual value (ie: test ticket function)
-    actual = string_checker(case, ["rock","paper", "scissors", "xxx"])
+    actual = string_checker(case, ["rock", "paper", "scissors", "xxx"])
 
     # compare actual and expected and output pass / fail
     if actual == expected:
